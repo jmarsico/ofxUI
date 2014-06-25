@@ -1,4 +1,4 @@
-ofxUI
+ofxUI_small
 =====
 Slimmed down version of Reza Ali's ofxUI that will compile on RaspberryPi.
 
