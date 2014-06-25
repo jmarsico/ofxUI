@@ -1,5 +1,6 @@
 ofxUI
 =====
+Slimmed down version to aid in compiliing for RaspberryPi
 
 A User Interface Library/Addon for openFrameworks
 
