@@ -1412,65 +1412,6 @@ ofxUIDoubleSlider* ofxUICanvas::addDoubleSlider(string _name, double _min, doubl
     return widget;
 }
 
-ofxUIRotarySlider* ofxUICanvas::addRotarySlider(string _name, float _min, float _max, float _value, int _size) {
-    ofxUIRotarySlider* widget = new ofxUIRotarySlider(rect->getWidth()-widgetSpacing*2, _min, _max, _value, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIRotarySlider* ofxUICanvas::addRotarySlider(string _name, float _min, float _max, float _value, float w, float x, float y, int _size) {
-    ofxUIRotarySlider* widget = new ofxUIRotarySlider(x, y, rect->getWidth()-widgetSpacing*2, _min, _max, _value, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIRotarySlider* ofxUICanvas::addRotarySlider(string _name, float _min, float _max, float *_value, int _size) {
-    ofxUIRotarySlider* widget = new ofxUIRotarySlider(rect->getWidth()-widgetSpacing*2, _min, _max, _value, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIRotarySlider* ofxUICanvas::addRotarySlider(string _name, float _min, float _max, float *_value, float w, float x, float y, int _size) {
-    ofxUIRotarySlider* widget = new ofxUIRotarySlider(x, y, w, _min, _max, _value, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageSlider* ofxUICanvas::addImageSlider(string _name, string _pathURL, float _min, float _max, float _value) {
-    ofxUIImageSlider* widget = new ofxUIImageSlider(rect->getWidth()-widgetSpacing*2, globalSliderHeight, _min, _max, _value, _pathURL, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageSlider* ofxUICanvas::addImageSlider(string _name, string _pathURL, float _min, float _max, float _value, float w, float h, float x, float y) {
-    ofxUIImageSlider* widget = new ofxUIImageSlider(x, y, w, h, _min, _max, _value, _pathURL, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageSlider* ofxUICanvas::addImageSlider(string _name, string _pathURL, float _min, float _max, float *_value) {
-    ofxUIImageSlider* widget = new ofxUIImageSlider(rect->getWidth()-widgetSpacing*2, globalSliderHeight, _min, _max, _value, _pathURL, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageSlider* ofxUICanvas::addImageSlider(string _name, string _pathURL, float _min, float _max, float *_value, float w, float h, float x, float y) {
-    ofxUIImageSlider* widget = new ofxUIImageSlider(x, y, w, h, _min, _max, _value, _pathURL, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUINumberDialer* ofxUICanvas::addNumberDialer(string _name, float _min, float _max, float _value, int _precision) {
-    ofxUINumberDialer* widget = new ofxUINumberDialer(_min, _max, _value, _precision, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUINumberDialer* ofxUICanvas::addNumberDialer(string _name, float _min, float _max, float *_value, int _precision) {
-    ofxUINumberDialer* widget = new ofxUINumberDialer(_min, _max, _value, _precision, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
 
 ofxUIMinimalSlider* ofxUICanvas::addMinimalSlider(string _name, float _min, float _max, float _value, int size) {
     ofxUIMinimalSlider* widget = new ofxUIMinimalSlider(_name, _min, _max, _value, rect->getWidth()-widgetSpacing*2, globalSliderHeight, 0, 0, size);
@@ -1534,17 +1475,6 @@ ofxUIFPSSlider* ofxUICanvas::addFPSSlider(string _name, float w, float h, float 
     return widget;
 }
 
-ofxUIRadio* ofxUICanvas::addRadio(string _name, vector<string> names, int _orientation, int _size) {
-    ofxUIRadio* widget = new ofxUIRadio(_name, names, _orientation, globalButtonDimension, globalButtonDimension, 0, 0, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIRadio* ofxUICanvas::addRadio(string _name, vector<string> names, int _orientation, float w, float h, float x, float y, int _size) {
-    ofxUIRadio* widget = new ofxUIRadio(_name, names, _orientation, w, h, x, y, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
 
 ofxUIButton* ofxUICanvas::addButton(string _name, bool _value) {
     ofxUIButton* widget = new ofxUIButton(_name, _value, globalButtonDimension, globalButtonDimension, 0, 0, widgetFontSize);
@@ -1612,32 +1542,6 @@ ofxUIToggleMatrix* ofxUICanvas::addToggleMatrix(string _name, int _rows, int _co
     return widget;
 }
 
-ofxUI2DPad* ofxUICanvas::add2DPad(string _name, ofxUIVec3f _rangeX, ofxUIVec3f _rangeY, ofxUIVec3f _value) {
-    float dim = rect->getWidth()-widgetSpacing*2;
-    ofxUI2DPad* widget = new ofxUI2DPad(_name, _rangeX, _rangeY, _value, dim, dim, 0, 0);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-
-ofxUI2DPad* ofxUICanvas::add2DPad(string _name, ofxUIVec3f _rangeX, ofxUIVec3f _rangeY, ofxUIVec3f _value, float w, float h, float x, float y) {
-    ofxUI2DPad* widget = new ofxUI2DPad(_name, _rangeX, _rangeY, _value, w, h, x, y);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUI2DPad* ofxUICanvas::add2DPad(string _name, ofxUIVec3f _rangeX, ofxUIVec3f _rangeY, ofxUIVec3f *_value) {
-    float dim = rect->getWidth()-widgetSpacing*2;
-    ofxUI2DPad* widget = new ofxUI2DPad(_name, _rangeX, _rangeY, _value, dim, dim, 0, 0);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUI2DPad* ofxUICanvas::add2DPad(string _name, ofxUIVec3f _rangeX, ofxUIVec3f _rangeY, ofxUIVec3f *_value, float w, float h, float x, float y) {
-    ofxUI2DPad* widget = new ofxUI2DPad(_name, _rangeX, _rangeY, _value, w, h, x, y);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
 
 ofxUITextInput* ofxUICanvas::addTextInput(string _name, string _textstring, int _size) {
     float h = 0;
@@ -1729,66 +1633,6 @@ ofxUIDropDownList* ofxUICanvas::addDropDownList(string _name, vector<string> ite
     return widget;
 }
 
-ofxUIWaveform* ofxUICanvas::addWaveform(string _name, float *_buffer, int _bufferSize, float _min, float _max, float _h) {
-    if(_h == -1)
-    {
-        _h = getGlobalGraphHeight();
-    }
-    ofxUIWaveform* widget = new ofxUIWaveform(rect->getWidth()-widgetSpacing*2, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIWaveform* ofxUICanvas::addWaveform(string _name, float *_buffer, int _bufferSize, float _min, float _max, float _w, float _h) {
-    ofxUIWaveform* widget = new ofxUIWaveform(_w, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUISpectrum* ofxUICanvas::addSpectrum(string _name, float *_buffer, int _bufferSize, float _min, float _max, float _h) {
-    if(_h != globalGraphHeight) {
-        _h = globalGraphHeight;
-    }
-    ofxUISpectrum* widget = new ofxUISpectrum(rect->getWidth()-widgetSpacing*2, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUISpectrum* ofxUICanvas::addSpectrum(string _name, float *_buffer, int _bufferSize, float _min, float _max, float _w, float _h) {
-    ofxUISpectrum* widget = new ofxUISpectrum(_w, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMovingGraph* ofxUICanvas::addMovingGraph(string _name, vector<float> _buffer, int _bufferSize, float _min, float _max, float _h) {
-    if(_h != globalGraphHeight)
-    {
-        _h = globalGraphHeight;
-    }
-    ofxUIMovingGraph* widget = new ofxUIMovingGraph(rect->getWidth()-widgetSpacing*2, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMovingGraph* ofxUICanvas::addMovingGraph(string _name, vector<float> _buffer, int _bufferSize, float _min, float _max, float _w, float _h) {
-    ofxUIMovingGraph* widget = new ofxUIMovingGraph(_w, _h, _buffer, _bufferSize, _min, _max, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImage* ofxUICanvas::addImage(string _name, ofImage *_image, float _w, float _h, bool _showLabel) {
-    ofxUIImage* widget = new ofxUIImage(_w, _h, _image, _name, _showLabel);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImage* ofxUICanvas::addImage(string _name, ofImage *_image, bool _showLabel) {
-    float _w = rect->getWidth()-widgetSpacing*2;
-    float _h = _w*(float)_image->getHeight()/(float)_image->getWidth();
-    ofxUIImage* widget = new ofxUIImage(_w, _h, _image, _name, _showLabel);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
 
 ofxUIBaseDraws* ofxUICanvas::addBaseDraws(string _name, ofBaseDraws *_base, float _w, float _h, bool _showLabel) {
     ofxUIBaseDraws* widget = new ofxUIBaseDraws(_w, _h, _base, _name, _showLabel);
@@ -1800,19 +1644,6 @@ ofxUIBaseDraws* ofxUICanvas::addBaseDraws(string _name, ofBaseDraws *_base, bool
     float _w = rect->getWidth()-widgetSpacing*2;
     float _h = _w*(float)_base->getHeight()/(float)_base->getWidth();
     ofxUIBaseDraws* widget = new ofxUIBaseDraws(_w, _h, _base, _name, _showLabel);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-ofxUIImageSampler* ofxUICanvas::addImageSampler(string _name, ofImage *_image, float _w, float _h) {
-    ofxUIImageSampler* widget = new ofxUIImageSampler(_w, _h, _image, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageSampler* ofxUICanvas::addImageSampler(string _name, ofImage *_image) {
-    float _w = rect->getWidth()-widgetSpacing*2;
-    float _h = _w*(float)_image->getHeight()/(float)_image->getWidth();
-    ofxUIImageSampler* widget = new ofxUIImageSampler(_w, _h, _image, _name);
     addWidgetPosition(widget, widgetPosition, widgetAlign);
     return widget;
 }
@@ -1841,155 +1672,6 @@ ofxUIBiLabelSlider* ofxUICanvas::addBiLabelSlider(string _name, string _leftLabe
     return widget;
 }
 
-ofxUICircleSlider* ofxUICanvas::addCircleSlider(string _name, float _min, float _max, float _value) {
-    ofxUICircleSlider* widget = new ofxUICircleSlider(rect->getWidth()-widgetSpacing*2, _min, _max, _value, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUICircleSlider* ofxUICanvas::addCircleSlider(string _name, float _min, float _max, float _value, float w, float x, float y) {
-    ofxUICircleSlider* widget = new ofxUICircleSlider(x, y, w, _min, _max, _value, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUICircleSlider* ofxUICanvas::addCircleSlider(string _name, float _min, float _max, float *_value) {
-    ofxUICircleSlider* widget = new ofxUICircleSlider(0, 0, rect->getWidth()-widgetSpacing*2, _min, _max, _value, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUICircleSlider* ofxUICanvas::addCircleSlider(string _name, float _min, float _max, float *_value, float w, float x, float y) {
-    ofxUICircleSlider* widget = new ofxUICircleSlider(x, y, w, _min, _max, _value, _name, widgetFontSize);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIValuePlotter* ofxUICanvas::addValuePlotter(string _name, int _bufferSize, float _min, float _max, float *_value, float _h) {
-    if(_h != globalGraphHeight)
-    {
-        _h = globalGraphHeight;
-    }
-    ofxUIValuePlotter* widget = new ofxUIValuePlotter(rect->getWidth()-widgetSpacing*2, _h, _bufferSize, _min, _max, _value, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIValuePlotter* ofxUICanvas::addValuePlotter(string _name, int _bufferSize, float _min, float _max, float *_value, float _w, float _h) {
-    ofxUIValuePlotter* widget = new ofxUIValuePlotter(_w, _h, _bufferSize, _min, _max, _value, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-
-ofxUI2DGraph* ofxUICanvas::add2DGraph(string _name, ofxUIVec2f _rangeX, ofxUIVec2f _rangeY, int _bufferSize, float * _xValues, float * _yValues) {
-    ofxUI2DGraph* widget = new ofxUI2DGraph(_name, _rangeX, _rangeY, _bufferSize, _xValues, _yValues, rect->getWidth()-widgetSpacing*2, rect->getWidth()-widgetSpacing*2);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUI2DGraph* ofxUICanvas::add2DGraph(string _name, ofxUIVec2f _rangeX, ofxUIVec2f _rangeY, int _bufferSize, float * _xValues, float * _yValues, float _w, float _h, float _x, float _y) {
-    ofxUI2DGraph* widget = new ofxUI2DGraph(_name, _rangeX, _rangeY, _bufferSize, _xValues, _yValues, _w, _h, _x, _y);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageToggle* ofxUICanvas::addImageToggle(string _name, string _path, bool *_value, float w, float h, float x, float y, int _size) {
-    ofxUIImageToggle *widget = new ofxUIImageToggle(x, y, w, h, _value, _path, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageToggle* ofxUICanvas::addImageToggle(string _name, string _path, bool _value, float w, float h, float x, float y, int _size) {
-    ofxUIImageToggle *widget = new ofxUIImageToggle(x, y, w, h, _value, _path, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageToggle* ofxUICanvas::addImageToggle(string _name, string _path, bool *_value, int _size) {
-    ofxUIImageToggle *widget = new ofxUIImageToggle(globalButtonDimension, globalButtonDimension, _value, _path, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageToggle* ofxUICanvas::addImageToggle(string _name, string _path, bool _value, int _size) {
-    ofxUIImageToggle *widget = new ofxUIImageToggle(globalButtonDimension, globalButtonDimension, _value, _path, _name);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageButton* ofxUICanvas::addImageButton(string _name, string _path, bool *_value, float w, float h, float x, float y, int _size) {
-    ofxUIImageButton *widget = new ofxUIImageButton(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageButton* ofxUICanvas::addImageButton(string _name, string _path, bool _value, float w, float h, float x, float y, int _size) {
-    ofxUIImageButton *widget = new ofxUIImageButton(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageButton* ofxUICanvas::addImageButton(string _name, string _path, bool *_value, int _size) {
-    ofxUIImageButton *widget = new ofxUIImageButton(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIImageButton* ofxUICanvas::addImageButton(string _name, string _path, bool _value, int _size) {
-    ofxUIImageButton *widget = new ofxUIImageButton(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageButton* ofxUICanvas::addMultiImageButton(string _name, string _path, bool *_value, float w, float h, float x, float y, int _size) {
-    ofxUIMultiImageButton *widget = new ofxUIMultiImageButton(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageButton* ofxUICanvas::addMultiImageButton(string _name, string _path, bool _value, float w, float h, float x, float y, int _size) {
-    ofxUIMultiImageButton *widget = new ofxUIMultiImageButton(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageButton* ofxUICanvas::addMultiImageButton(string _name, string _path, bool *_value, int _size) {
-    ofxUIMultiImageButton *widget = new ofxUIMultiImageButton(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageButton* ofxUICanvas::addMultiImageButton(string _name, string _path, bool _value, int _size) {
-    ofxUIMultiImageButton *widget = new ofxUIMultiImageButton(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-//
-ofxUIMultiImageToggle* ofxUICanvas::addMultiImageToggle(string _name, string _path, bool *_value, float w, float h, float x, float y, int _size) {
-    ofxUIMultiImageToggle *widget = new ofxUIMultiImageToggle(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageToggle* ofxUICanvas::addMultiImageToggle(string _name, string _path, bool _value, float w, float h, float x, float y, int _size) {
-    ofxUIMultiImageToggle *widget = new ofxUIMultiImageToggle(x, y, w, h, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageToggle* ofxUICanvas::addMultiImageToggle(string _name, string _path, bool *_value, int _size) {
-    ofxUIMultiImageToggle *widget = new ofxUIMultiImageToggle(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
-
-ofxUIMultiImageToggle* ofxUICanvas::addMultiImageToggle(string _name, string _path, bool _value, int _size) {
-    ofxUIMultiImageToggle *widget = new ofxUIMultiImageToggle(globalButtonDimension, globalButtonDimension, _value, _path, _name, _size);
-    addWidgetPosition(widget, widgetPosition, widgetAlign);
-    return widget;
-}
 //
 
 ofxUITextArea* ofxUICanvas::addTextArea(string _name, string _textstring, int _size) {
